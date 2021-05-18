@@ -35,8 +35,5 @@
     "typedoc": "^0.20.35",
     "typescript": "^4.2.3",
     "uvu": "^0.5.1"
-  },
-  "dependencies": {
-    "twind": "^0.16.16"
   }
 }
