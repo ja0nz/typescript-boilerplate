@@ -13,18 +13,18 @@ lint-and-test:
   script:
     - npm install
     - npm add -D esbuild
-    - npm test
-    - npm lint
-    - npm build-all
+    - npm run test
+    - npm run lint
+    - npm run build-all
 
 # Deploy docs to Gitlab pages
 pages:
   stage: deploy
   only:
-    - master
+    - main
   script:
     - npm install
-    - npm gendocs
+    - npm run gendocs
     - mv docs public
   artifacts:
     paths:

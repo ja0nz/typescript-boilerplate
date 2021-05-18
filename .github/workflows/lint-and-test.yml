@@ -20,6 +20,6 @@ jobs:
 
     - run: npm install
     - run: npm add -D esbuild
-    - run: npm test
-    - run: npm lint
-    - run: npm build-all
+    - run: npm run test
+    - run: npm run lint
+    - run: npm run build-all

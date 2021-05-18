@@ -10,7 +10,7 @@ on:
     #tags:
     #  - v*
     branches:
-      - master
+      - main
 
 jobs:
   deploy_pages:
@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: '12'
     - run: npm install
-    - run: npm gendocs
+    - run: npm run gendocs
 
     - run: touch docs/.nojekyll
     - name: Deploy docs 🚀
