@@ -5,7 +5,7 @@ Go check it out and leave a star!
 
 ** What you get in here
 - Dev/Build with [[https://www.snowpack.dev/][Snowpack]]
-- Testing with [[file:README.md::Testing with \[uvu\](https://github.com/lukeed/uvu/)][Uvu]] and [[https://github.com/WebReflection/linkedom][LinkeDOM]]
+- Testing with [[https://github.com/lukeed/uvu/][Uvu]] and [[https://github.com/WebReflection/linkedom][LinkeDOM]]
 - Linting with [[https://github.com/typescript-eslint/typescript-eslint][TypeScript-ESLint]]
 - Documentation with [[https://typedoc.org/guides/doccomments/][TypeDoc]]
 - Published Documentation with [[https://pages.github.com][GitHub Pages]] (see [[https://ja0nz.github.io/typescript-boilerplate][this boilerplate]])
