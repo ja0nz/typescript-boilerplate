@@ -27,7 +27,7 @@ pnpm lint
 
 # Houston, green or red button
 pnpm quick
-pnpm repl <optinal_filename>
+pnpm repl <optional_filepath>
 pnpm test
 
 # Houston, where is the airplane handbook
