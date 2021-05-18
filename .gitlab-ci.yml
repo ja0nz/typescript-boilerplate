@@ -12,10 +12,9 @@ lint-and-test:
   stage: test
   script:
     - npm install
-    - npm add -D esbuild
     - npm run test
     - npm run lint
-    - npm run build-all
+    - npm run build
 
 # Deploy docs to Gitlab pages
 pages:
