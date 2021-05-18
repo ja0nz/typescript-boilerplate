@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { foo } from './main'
+import { foo } from "./node/index";
 
-foo()
+foo();
