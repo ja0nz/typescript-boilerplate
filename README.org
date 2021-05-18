@@ -1,0 +1,35 @@
+
+* TypeScript Boilerplate for 2021
+This boilerplate started as a fork of https://github.com/metachris/typescript-boilerplate
+Go check it out and leave a star!
+
+** What you get in here
+- Dev/Build with [[https://www.snowpack.dev/][Snowpack]]
+- Testing with [[file:README.md::Testing with \[uvu\](https://github.com/lukeed/uvu/)][Uvu]] and [[https://github.com/WebReflection/linkedom][LinkeDOM]]
+- Linting with [[https://github.com/typescript-eslint/typescript-eslint][TypeScript-ESLint]]
+- Documentation with [[https://typedoc.org/guides/doccomments/][TypeDoc]]
+- Published Documentation with [[https://pages.github.com][GitHub Pages]] (see [[https://ja0nz.github.io/typescript-boilerplate][this boilerplate]])
+- [[https://github.com/features/actions][GitHub Actions]] for GitHubCI
+
+** (p)npm API
+Uses pnpm for illustration purposes. *Yarn* works just fine!
+#+begin_src bash
+# Get the plane in the air
+pnpm install
+pnpm start
+
+# ... and take it back down
+pnpm build
+
+# Houston, we have a problem
+pnpm clean
+pnpm lint
+
+# Houston, green or red button
+pnpm quick
+pnpm repl <optinal_filename>
+pnpm test
+
+# Houston, where is the airplane handbook
+pnpm gendocs
+#+end_src
