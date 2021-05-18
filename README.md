@@ -7,7 +7,7 @@ TypeScript project boilerplate with modern tooling, for Node.js programs, librar
 * [TypeScript 4](https://www.typescriptlang.org/)
 * Optionally [esbuild](https://esbuild.github.io/) to bundle for browsers (and Node.js)
 * Linting with [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) ([tslint](https://palantir.github.io/tslint/) is deprecated)
-* Testing with [Jest](https://jestjs.io/docs/getting-started) (and [ts-jest](https://www.npmjs.com/package/ts-jest))
+* Testing with [uvu](https://github.com/lukeed/uvu/)
 * Publishing to npm
 * Continuous integration ([GitHub Actions](https://docs.github.com/en/actions) / [GitLab CI](https://docs.gitlab.com/ee/ci/))
 * Automatic API documentation with [TypeDoc](https://typedoc.org/guides/doccomments/)
@@ -62,28 +62,31 @@ You can generate a full clean build with `pnpm build-all` (which uses both `tsc`
 * Read more about the esbuild setup [here](https://www.metachris.com/2021/04/starting-a-typescript-project-in-2021/#esbuild).
 * esbuild for the browser uses the IIFE (immediately-invoked function expression) format, which executes the bundled code on load (see also https://github.com/evanw/esbuild/issues/29)
 
+## Tests with Uvu
 
-## Tests with Jest
-
-You can write [Jest tests](https://jestjs.io/docs/getting-started) [like this](https://github.com/metachris/typescript-boilerplate/blob/master/src/main.test.ts):
+You can write [Uvu tests](https://github.com/lukeed/uvu/#usage):
 
 ```typescript
+import { test } from 'uvu';
+import * as assert from 'uvu/assert';
 import { greet } from './main'
 
 test('the data is peanut butter', () => {
-  expect(1).toBe(1)
+  assert.is(1, 1);
 });
 
 test('greeting', () => {
-  expect(greet('Foo')).toBe('Hello Foo')
+  assert.is(greet('Foo'), 'Hello Foo');
 });
+
+test.run();
 ```
 
 Run the tests with `pnpm test`, no separate compile step is necessary.
 
-* See also the [Jest documentation](https://jestjs.io/docs/getting-started).
+* See also the (optinal) [Uvu/assert collection ](https://github.com/lukeed/uvu/blob/master/docs/api.assert.md). Because uvu operates through thrown Errors (or lack thereof), any Error-based utility can be used as an assertion.
+
 * The tests can be automatically run in CI (GitHub Actions, GitLab CI): [`.github/workflows/lint-and-test.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.github/workflows/lint-and-test.yml), [`.gitlab-ci.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.gitlab-ci.yml)
-* Take a look at other modern test runners such as [ava](https://github.com/avajs/ava), [uvu](https://github.com/lukeed/uvu) and [tape](https://github.com/substack/tape)
 
 ## Documentation, published with CI
 
@@ -110,7 +113,7 @@ This is the documentation for this boilerplate project: https://metachris.github
 * [tsconfig docs](https://www.typescriptlang.org/tsconfig)
 * [esbuild docs](https://esbuild.github.io/)
 * [typescript-eslint docs](https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/README.md)
-* [Jest docs](https://jestjs.io/docs/getting-started)
+* [Uvu Api](https://github.com/lukeed/uvu/blob/master/docs/api.uvu.md)
 * [GitHub Actions](https://docs.github.com/en/actions), [GitLab CI](https://docs.gitlab.com/ee/ci/)
 
 
