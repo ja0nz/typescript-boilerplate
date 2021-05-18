@@ -24,7 +24,7 @@
     "ts-node": "ts-node",
     "gendocs": "typedoc --entryPoints src/main.ts",
     "build": "tsc -p tsconfig.json",
-    "build-all": "$npm_execpath clean && $npm_execpath build && $npm_execpath esbuild-node && $npm_execpath esbuild-browser",
+    "build-all": "$npm_execpath run clean && $npm_execpath run build && $npm_execpath run esbuild-node && $npm_execpath run esbuild-browser",
     "esbuild-browser": "esbuild src/browser.ts --bundle --minify --sourcemap=external --outfile=dist/esbuild/browser.js",
     "esbuild-browser:dev": "esbuild src/browser.ts --bundle --outfile=dist/esbuild/browser.js",
     "esbuild-browser:watch": "esbuild src/browser.ts --bundle --watch --outfile=dist/esbuild/browser.js",
