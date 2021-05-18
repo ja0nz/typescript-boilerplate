@@ -26,20 +26,20 @@ cd your_project_name
 ...
 
 # Install dependencies
-yarn install
+pnpm install
 
-# Now you can run various yarn commands:
-yarn cli
-yarn lint
-yarn test
-yarn build-all
-yarn ts-node <filename>
-yarn esbuild-browser
+# Now you can run various pnpm commands:
+pnpm cli
+pnpm lint
+pnpm test
+pnpm build-all
+pnpm ts-node <filename>
+pnpm esbuild-browser
 ...
 ```
 
 * Take a look at all the scripts in [`package.json`](https://github.com/metachris/typescript-boilerplate/blob/master/package.json)
-* For publishing to npm, use `yarn publish` (or `npm publish`)
+* For publishing to npm, use `pnpm publish` (or `npm publish`)
 
 ## esbuild
 
@@ -47,15 +47,15 @@ yarn esbuild-browser
 
 ```bash
 # Build for browsers
-yarn esbuild-browser:dev
-yarn esbuild-browser:watch
+pnpm esbuild-browser:dev
+pnpm esbuild-browser:watch
 
 # Build the cli for node
-yarn esbuild-node:dev
-yarn esbuild-node:watch
+pnpm esbuild-node:dev
+pnpm esbuild-node:watch
 ```
 
-You can generate a full clean build with `yarn build-all` (which uses both `tsc` and `esbuild`).
+You can generate a full clean build with `pnpm build-all` (which uses both `tsc` and `esbuild`).
 
 * `package.json` includes `scripts` for various esbuild commands: [see here](https://github.com/metachris/typescript-boilerplate/blob/master/package.json#L23)
 * `esbuild` has a `--global-name=xyz` flag, to store the exports from the entry point in a global variable. See also the [esbuild "Global name" docs](https://esbuild.github.io/api/#global-name).
@@ -79,7 +79,7 @@ test('greeting', () => {
 });
 ```
 
-Run the tests with `yarn test`, no separate compile step is necessary.
+Run the tests with `pnpm test`, no separate compile step is necessary.
 
 * See also the [Jest documentation](https://jestjs.io/docs/getting-started).
 * The tests can be automatically run in CI (GitHub Actions, GitLab CI): [`.github/workflows/lint-and-test.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.github/workflows/lint-and-test.yml), [`.gitlab-ci.yml`](https://github.com/metachris/typescript-boilerplate/blob/master/.gitlab-ci.yml)
@@ -92,7 +92,7 @@ You can auto-generate API documentation from the TyoeScript source files using [
 Generate the documentation, using `src/main.ts` as entrypoint (configured in package.json):
 
 ```bash
-yarn docs
+pnpm gendocs
 ```
 
 The resulting HTML is saved in `docs/`.
