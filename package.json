@@ -14,7 +14,7 @@
   "browser": "./build/_dist_/browser/index.js",
   "scripts": {
     "repl": "cd $INIT_CWD && ts-node",
-    "quick": "ts-node src/eval.ts",
+    "quick": "ts-node src/quick.ts",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "test": "uvu -r ts-node/register",
     "clean": "del build",
