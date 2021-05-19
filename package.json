@@ -10,7 +10,7 @@
     "boilerplate",
     "snowpack"
   ],
-  "main": "./build/_dist_/node/index.js",
+  "main": "./build/_dist_/index.js",
   "browser": "./build/_dist_/browser/index.js",
   "scripts": {
     "repl": "ts-node",
@@ -18,7 +18,7 @@
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "test": "uvu -r ts-node/register",
     "clean": "del build",
-    "gendocs": "typedoc --entryPoints src/node/index.ts src/browser/index.ts",
+    "gendocs": "typedoc --entryPoints src/index.ts src/browser/index.ts",
     "build": "$npm_execpath run clean && snowpack build",
     "start": "snowpack dev"
   },
