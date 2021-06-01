@@ -2,6 +2,7 @@
  * This file is the entrypoint of browser builds.
  * The code executes when loaded in a browser.
  */
+// @ts-ignore
 import { foo } from "../index.ts";
 import { dedupe } from "@thi.ng/transducers";
 
