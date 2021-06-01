@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+# Snowpack dev
+
+# Prelude
+_required_ "npx" || exit
+
+npx snowpack dev

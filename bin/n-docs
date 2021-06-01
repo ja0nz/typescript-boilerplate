@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+# Generate documentation
+
+# Prelude
+_required_ "npx" || exit
+
+npx typedoc --entryPoints src/index.ts src/browser/index.ts
