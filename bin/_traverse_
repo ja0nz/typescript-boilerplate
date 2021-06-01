@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+# Find a file UPSTREAM (reverse recursion)
+# Returns absolute filepath
+# @1: string; Name of the file name to look downstream
+while [[ $PWD != / ]] ; do
+    found=$(find "$PWD"/ -maxdepth 1 -name "$1")
+    if [[ -n "$found" ]]; then
+        echo "$found"
+        break
+    fi
+    cd ..
+done

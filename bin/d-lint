@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+# Deno lint specific or src files
+
+# Prelude
+_required_ "deno" || exit
+if [[ -n "$@" ]]; then
+    deno lint $@
+else
+    deno lint $ROOT/src
+fi

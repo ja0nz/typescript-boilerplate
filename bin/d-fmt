@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+# Deno fmt specific or src files
+
+# Prelude
+_required_ "deno" || exit
+if [[ -n "$@" ]]; then
+	deno fmt $@
+else
+	deno fmt $ROOT/src
+fi

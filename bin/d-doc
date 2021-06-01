@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+# Deno doc w/ preloaded import map
+# Quick documentation generator of a module
+
+# Prelude
+IMPORT_MAP="$ROOT/import_map.json"
+_required_ "deno" || exit
+
+deno doc --import-map=$IMPORT_MAP $@

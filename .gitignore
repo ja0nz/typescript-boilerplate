@@ -4,6 +4,7 @@
 /dist/
 /docs/
 .idea/*
+bin/denon
 
 .DS_Store
 coverage

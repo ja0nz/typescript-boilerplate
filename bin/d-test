@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+# Deno test specific or src files
+
+# Prelude
+_required_ "deno" || exit
+IMPORT_MAP=$(test -f "$ROOT/import_map.json" && echo "--import-map $_")
+TSCONFIG=$(test -f "$ROOT/tsconfig.json" && echo "--config $_")
+
+ARGS=$(if [[ -n "$@" ]]; then echo "$@"; else echo "$ROOT/src"; fi)
+
+deno test $IMPORT_MAP $TSCONFIG $ARGS

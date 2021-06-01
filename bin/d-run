@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+# Deno run w/ preloaded import map
+
+# Prelude
+_required_ "deno" || exit
+IMPORT_MAP=$(test -f "$ROOT/import_map.json" && echo "--import-map $_")
+TSCONFIG=$(test -f "$ROOT/tsconfig.json" && echo "--config $_")
+
+deno run $IMPORT_MAP $TSCONFIG $@

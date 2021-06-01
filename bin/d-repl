@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+# Deno repl from current directory
+
+# Prelude
+_required_ "deno" || exit
+TSCONFIG=$(test -f "$ROOT/tsconfig.json" && echo "--config $_")
+
+deno repl $TSCONFIG $@
