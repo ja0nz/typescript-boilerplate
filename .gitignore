@@ -1,10 +1,11 @@
 /node_modules/
+/deno_modules/
 /build/
 /lib/
 /dist/
 /docs/
 .idea/*
-bin/denon
+/bin/denon
 
 .DS_Store
 coverage

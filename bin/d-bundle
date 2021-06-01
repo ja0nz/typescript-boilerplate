@@ -6,8 +6,8 @@ _required_ "deno" || exit
 IMPORT_MAP=$(test -f "$ROOT/import_map.json" && echo "--import-map $_")
 TSCONFIG=$(test -f "$ROOT/tsconfig.json" && echo "--config $_")
 
-FILE=$(echo $@ | grep -Po "[- \w]+\.(ts|js)" | tr \. -)
-OUTPUT="$ROOT/compile/$(date +%Y-%m-%d_%H-%M-%S)_$FILE"
-mkdir -p "$ROOT/compile"
+RUNFILE=$(echo $@ | grep -Po "[- \w]+\.(ts|js)" | tr \. -)
+TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
+OUTPUT=$(mkdir -p "$ROOT/build/bundled/" && echo "$_""$TIMESTAMP"'_'"$RUNFILE")
 
-deno compile -o $OUTPUT --import-map=$IMPORT_MAP $@
+deno bundle $TSCONFIG $IMPORT_MAP $@ $OUTPUT

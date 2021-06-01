@@ -3,15 +3,16 @@
 # Ceremony to ensure dependencies are on path
 # Exit 1 if script not found
 # @1: string; Space separated list of required executables
- 
+
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 required="$1"
 for req in $required; do
-    if ! command -v "$req" &> /dev/null
-    then
-        echo -e "${RED}$req could not be found${NC}"
-        exit 1 
-    fi
+	if
+		! command -v "$req" >/dev/null 2>&1
+	then
+		echo -e "${RED}$req could not be found${NC}"
+		exit 1
+	fi
 done
