@@ -3,6 +3,9 @@
 This boilerplate started as a fork of https://github.com/metachris/typescript-boilerplate
 Go check it out and leave a star!
 
+** Deno branch vs Node branch
+This is the *node* branch. There is a deno branch as well.
+
 ** What you get in here
 - Dev/Build with [[https://www.snowpack.dev/][Snowpack]]
 - Testing with [[https://github.com/lukeed/uvu/][Uvu]] and [[https://github.com/WebReflection/linkedom][LinkeDOM]]
@@ -26,7 +29,7 @@ pnpm clean
 pnpm lint
 
 # Houston, green or red button
-pnpm quick
+pnpm scratch
 pnpm repl <optional_filepath>
 pnpm test
 
