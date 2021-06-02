@@ -7,6 +7,8 @@ mkShell {
    xsel # Command-line program for getting and setting the contents of the X selection
    html-tidy # A HTML validator and `tidier`
    shfmt # A shell parser and formatter
+   jq # A lightweight and flexible command-line JSON processor
    deno # A secure runtime for JavaScript and TypeScript
+   moreutils # For sponge command
   ];
 }
