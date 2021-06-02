@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+# Add dependency to both - package.json and import-map.json
+# Argument: Dependency lik in npm i <dep>, f.e. npm i moment
+
+# Prelude
+_required_ "jq sponge" || exit
+
+#npm i $1
+jq ".imports += {\"$1\":\"https://cdn.skypack.dev/$1?dts\"}" $ROOT/import_map.json | sponge $ROOT/import_map.json
