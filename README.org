@@ -39,32 +39,34 @@ n-build
 # npx typedoc
 n-docs
 
-# Add dependency to
+# Add dependency (rudimentary!)
+# Does only work with npm packages
+dep-add <moment>
 
 # Quick run
-d-run file.ts
+d-run <file.ts>
 
 # All hail to the REPL
 d-repl
 
 # Test
 d-test # Run all .test.ts
-d-test files.ts
+d-test <files.ts>
 
 # Lint
 d-lint # Run on all .ts files
-d-lint files.ts
+d-lint <files.ts>
 
 # Format
 d-fmt
-d-fmt files.ts
+d-fmt <files.ts>
 
 # Check modules exports
-d-doc file.ts
+d-doc <file.ts>
 
 # Compile - Emit standalone executable
-d-compile file.ts
+d-compile <file.ts>
 
 # Bundle - Roll your .bundle.js
-d-bundle file.ts
+d-bundle <file.ts>
 #+end_src
