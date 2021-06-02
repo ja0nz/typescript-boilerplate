@@ -1,5 +1,5 @@
 {
   "imports": {
-    "@thi.ng/transducers": "https://cdn.skypack.dev/@thi.ng/transducers?dts"
+    "@testing/": "https://deno.land/std/testing/"
   }
 }

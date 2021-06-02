@@ -1,11 +1,12 @@
-// import { greet } from "./index";
+// @ts-ignore: TSC interopt
+import { assertEquals } from "@testing/asserts.ts";
+// @ts-ignore: TSC interopt
+import { greet } from "./index.ts";
 
-// test("the data is peanut butter", () => {
-//   assert.is(1, 1);
-// });
+Deno.test("the data is peanut butter", () => {
+  assertEquals(1, 1);
+});
 
-// test("greeting", () => {
-//   assert.is(greet("Foo"), "Hello Foo");
-// });
-
-// test.run();
+Deno.test("greeting", () => {
+  assertEquals(greet("Foo"), "Hello Foo");
+});
