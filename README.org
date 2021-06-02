@@ -1,35 +1,70 @@
-
 * TypeScript Boilerplate for 2021
 This boilerplate started as a fork of https://github.com/metachris/typescript-boilerplate
 Go check it out and leave a star!
 
+** Deno branch vs Node branch
+This is the *Deno* branch. There is a node/npm branch as well.
+
+While some tasks like like Testing/Linting/Formatting are very solid implemented by Deno I haven't found a good *ES6 module builder* yet. Thats why there is still a minimal [[file:package.json][package.json]] with [[https://www.snowpack.dev/][Snowpack]] on board. [[https://typedoc.org/][Typedoc]] is another npm dependency which simply missing a deno equivalent. Take a peek into the [[file:bin/][bin/]] folder and you'll see commands prefixed with *n-* or *d-* related to either *node or deno*.
+
+*** Interopt challenges deno/node
+There are two pain points yet to be resolved:
+
+1. Obviously you need to install/reference the dependencies for both - node and deno. The script rudimentary [[file:bin/dep-add][dep-add]] does the job for you but is missing some features like updating/versioning/purging, etc. There are definitely some TODOs in this area.
+
+2. *TSC* warns you if the import statements contains the file extension. See issue [[https://github.com/Microsoft/TypeScript/issues/27481][#27481]]. Annoyingly every import must be decorated with ~// @ts-ignore~.
+
 ** What you get in here
+- Deno support w/ convenience wrappers defined in [[file:bin/][bin/]]
+- Testing/Linting/Formatting with [[https://deno.land/][Deno]]
 - Dev/Build with [[https://www.snowpack.dev/][Snowpack]]
-- Testing with [[https://github.com/lukeed/uvu/][Uvu]] and [[https://github.com/WebReflection/linkedom][LinkeDOM]]
-- Linting with [[https://github.com/typescript-eslint/typescript-eslint][TypeScript-ESLint]]
 - Documentation with [[https://typedoc.org/guides/doccomments/][TypeDoc]]
 - Published Documentation with [[https://pages.github.com][GitHub Pages]] (see [[https://ja0nz.github.io/typescript-boilerplate][this boilerplate]])
 - [[https://github.com/features/actions][GitHub Actions]] for GitHubCI
 
-** (p)npm API
-Uses pnpm for illustration purposes. *Yarn* works just fine!
+** System Requirements
+This boilerplate uses [[https://direnv.net/][direnv]] for extending the *$PATH variable* with scripts found in [[file:bin/][bin/]] and sets some project related ~env~. See [[file:.envrc][.envrc]] for all references. You have to set them manually if you don't use direnv!
+
+Speaking about the first line in [[file:.envrc][.envrc]] its shows ~eval "$(lorri direnv)"~: this boilerplate using [[https://nixos.org/][Nix]] and [[https://github.com/target/lorri][lorri]] for scoped binaries like *deno, prettier,...* This is absolutely optional. You may delete this line and install those dependencies ([[file:shell.nix][shell.nix]]) manually.
+
+** CMD API
+Flex your scripting muscles: This *Deno* branch utilizes shell scripting a lot. See [[file:bin/][bin/]] folder.
+
+For further deno options use *deno --help* manual
 #+begin_src bash
-# Get the plane in the air
-pnpm install
-pnpm start
+# npx snowpack
+n-start
+n-build
 
-# ... and take it back down
-pnpm build
+# npx typedoc
+n-docs
 
-# Houston, we have a problem
-pnpm clean
-pnpm lint
+# Add dependency to
 
-# Houston, green or red button
-pnpm quick
-pnpm repl <optional_filepath>
-pnpm test
+# Quick run
+d-run file.ts
 
-# Houston, where is the airplane handbook
-pnpm gendocs
+# All hail to the REPL
+d-repl
+
+# Test
+d-test # Run all .test.ts
+d-test files.ts
+
+# Lint
+d-lint # Run on all .ts files
+d-lint files.ts
+
+# Format
+d-fmt
+d-fmt files.ts
+
+# Check modules exports
+d-doc file.ts
+
+# Compile - Emit standalone executable
+d-compile file.ts
+
+# Bundle - Roll your .bundle.js
+d-bundle file.ts
 #+end_src
