@@ -24,7 +24,7 @@
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
     "del-cli": "^3.0.1",
-    "eslint": "^7.22.0 ",
+    "eslint": "^8.15.0 ",
     "snowpack": "^3.4.0",
     "ts-node": "^9.1.1",
     "tslib": "^2.2.0",
