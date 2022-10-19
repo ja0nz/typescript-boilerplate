@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@snowpack/plugin-typescript": "^1.2.1",
-    "@types/node": "^15.0.1",
+    "@types/node": "^18.11.2",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
     "del-cli": "^3.0.1",
